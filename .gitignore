@@ -1,0 +1,30 @@
+# === Node.js / React (frontend) ===
+frontend/node_modules/
+frontend/.env
+frontend/.next/
+frontend/.turbo/
+frontend/dist/
+frontend/build/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# === Java / Spring Boot (backend) ===
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/.idea/
+backend/*.iml
+backend/*.log
+backend/.env
+
+# === IDE and OS-specific ===
+.vscode/
+.idea/
+*.iml
+*.log
+.DS_Store
+Thumbs.db
+.env
+

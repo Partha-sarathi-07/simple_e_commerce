@@ -1,0 +1,93 @@
+.productInfo {
+    padding-top: 100px;
+    color: white;
+    display: flex;
+    letter-spacing: 0.5px;
+    gap: 100px;
+    padding-left: 200px;
+}
+
+.productInfo > img {
+    width: 600px;
+    height: 400px;
+}
+
+.info {
+    width: 40%;
+}
+
+.category {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgb(96, 197, 255);
+}
+
+.name {
+    margin-top: 40px;
+    font-size: 1.75rem;
+}
+
+.brand {
+    display: block;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-weight: 500;
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.price {
+    margin-top: 20px;
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.addToCart {
+    padding: 20px 30px;
+    color: white; 
+    background-color: rgb(41, 119, 228);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.stock {
+    display: block;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+}
+
+.update {
+    padding: 20px 30px;
+    color: white; 
+    background-color: rgb(41, 119, 228);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+.delete {
+    padding: 20px 30px;
+    color: white;
+    background-color: rgb(190, 4, 4);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 20px;
+}

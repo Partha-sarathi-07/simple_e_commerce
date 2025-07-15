@@ -1,0 +1,11 @@
+.productsContainer {
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 300px;
+    row-gap: 100px;
+
+    height: fit-content;
+    background-color: rgb(23, 23, 23);
+}

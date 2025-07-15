@@ -1,0 +1,53 @@
+.productCard {
+    background-color: rgb(39, 39, 39);
+    padding: 25px;
+    color: white;
+    max-width: 250px;
+    height: fit-content;
+    border-radius:8px;
+}
+.productCard > img {
+    border-radius: 5px;
+    width: 200px;
+    height: 130px;
+    background-size: contain;
+}
+
+.name {
+    font-size: 1.15rem;
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.brand {
+    margin-top: 15px;
+    font-style: italic;
+    display: block;
+    text-transform: capitalize;
+    font-size: 0.85rem;
+}
+
+.price {
+    display: block;
+    margin-top: 20px;
+}
+
+.button > button {
+    margin-top: 15px;
+    background-image: linear-gradient(to right, #059eee, #0092f0, #0085f0, #0077ef, #1267eb);;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: rgba(5, 158, 238, 0.25) 0px 14px 28px, rgba(18, 103, 235, 0.22) 0px 10px 10px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

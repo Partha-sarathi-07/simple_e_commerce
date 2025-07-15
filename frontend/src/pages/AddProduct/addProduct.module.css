@@ -1,0 +1,145 @@
+.addProduct {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.productForm {
+    padding-top: 150px;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.productForm > label {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.productForm > label > span {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.productForm > label > input {
+    border-radius: 7px;
+    border-style: none;
+    height: 50px;
+    font-size: 1.15rem;
+    padding-left: 20px;
+}
+
+.name > input,
+.brand > input {
+    width: 700px;
+}
+
+.description {
+    width: 1430px;
+}
+
+.price {
+    width: 600px;
+}
+
+.category {
+    position: relative;
+}
+
+.categoriesDropdown {
+    padding-top: 10px;
+    position: absolute;
+    font-size: 1.15rem;
+    color: black;
+    list-style: none;
+    background-color: white;
+    width: 100%;
+    top: 44px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.categoriesDropdown > li {
+    padding-left: 20px;
+    height: 30px;
+}
+
+.categoriesDropdown > li:hover {
+    background-color: rgb(6, 128, 169);
+}
+
+.category > input{
+    cursor: pointer;
+    width: 700px;
+}
+
+.stock, 
+.releaseDate,
+.image {
+    width: 470px;
+}
+
+.stock > label {
+    display: flex;
+    column-gap: 10px;
+}
+
+.stock > label > span {
+    color: white;
+    font-size: 1.15rem;
+}
+
+.image > div {
+    display: flex;
+    border-radius: 7px;
+    font-size: 1.25rem;
+    width: 90%;
+}
+
+.image > div > button {
+    width: 200px;
+    font-size: inherit;
+    cursor: pointer;
+    border-radius: 7px 0px 0px 7px;
+    height: 50px;
+    background-color: rgb(229, 229, 229);
+    border: none;
+    border-right: 1px solid gray;
+}
+
+
+.fileUpload {
+    display: none;
+}
+.imagePreview > p {
+    width: 300px;
+    display: flex;
+    background-color: white;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 7px 7px 0;
+}
+
+.imagePreview > img{
+    width: 300px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.submit {
+    font-size: 1.25rem;
+    color: white;
+    background-color: rgb(52, 123, 254);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+

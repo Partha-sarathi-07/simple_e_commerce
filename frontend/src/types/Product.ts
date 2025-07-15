@@ -5,5 +5,6 @@ export interface Product {
     stock?: number
     category?: string
     description?: string
-    image: string
+    releaseDate?: Date
+    image: File
 }

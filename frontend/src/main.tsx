@@ -7,20 +7,20 @@ import ProductInfo from './pages/ProductInfo/ProductInfo'
 import AddProduct from './pages/AddProduct/AddProduct'
 import UpdateProduct from './pages/UpdateProduct/UpdateProduct'
 const router = createBrowserRouter([
-    // {
-    //     path : '/', 
-    //     element: <Home />
-    // },
-    // {
-    //     path: '/',
-    //     element: <ProductInfo />
-    // },
-    // {
-    //     path: '/',
-    //     element: <AddProduct />
-    // },
     {
-        path: '/',
+        path : '/', 
+        element: <Home />
+    },
+    {
+        path: '/productInfo',
+        element: <ProductInfo />
+    },
+    {
+        path: '/addProduct',
+        element: <AddProduct />
+    },
+    {
+        path: '/updateProduct',
         element: <UpdateProduct />
     }
 ])

@@ -1,14 +1,15 @@
 import styles from './header.module.css';
 import  cartIcon  from '../../assets/cart.ico';
 import logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
         <header className={styles.header}>
             <ul className={styles.options}>
                 <li><img src={logo} alt="app logo" /></li>
-                <li>Home</li>
-                <li>Add Product</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/addProduct">Add Product</Link></li>
                 <li className={styles.dropdown}>
                     <a href="#home">Categories ▼</a>
                     <ul>

@@ -18,7 +18,7 @@ export default function UpdateProduct() {
         <>
             <Header />
             <h2 className={styles.updateProduct}>Update Product</h2>
-            <ProductForm productInfo={availableProduct} />
+            <ProductForm productInfo={availableProduct}/>
         </>
     )
 }

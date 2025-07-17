@@ -38,7 +38,7 @@ h4 {
     font-size: 1.15rem;
     font-weight: 700;
     margin-top: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .description {
@@ -80,9 +80,11 @@ h4 {
     border-radius: 5px;
     font-size: 1rem;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .delete {
+    cursor: pointer;
     padding: 20px 30px;
     color: white;
     background-color: rgb(190, 4, 4);

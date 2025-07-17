@@ -1,29 +1,37 @@
-import { useRef, useState } from "react";
 import Header from "../../components/Header/Header";
-import styles from './addProduct.module.css';
 import type { Product as ProductType } from "../../types/Product";
 import ProductForm from "../../components/ProductForm/ProductForm";
+import axios from "axios";
 
 export default function AddProduct() {
-    function handleForm(event:React.FormEvent<HTMLFormElement>) {
+
+    async function handleForm(event:React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        const imageEntry = formData.get('image');
-        if (!imageEntry || !(imageEntry instanceof File)) {
+        const image = formData.get('image');
+        if (!image || !(image instanceof File)) {
             window.alert("please upload valid image");
             return;
         }
-        const prouduct: ProductType= {
+        const product: ProductType= {
             name: formData.get('name')?.toString()!,
             brand: formData.get('brand')?.toString()!,
             price: Number(formData.get('price')),
             category: formData.get('category')?.toString()!,
             description: formData.get('description')?.toString()!,
             releaseDate: new Date(formData.get('releaseDate')?.toString()!),
-            stock: Number(formData.get('stock')),
-            image: imageEntry
+            stockQuantity: Number(formData.get('stock')),
         };
-        console.log(prouduct)
+
+        const multipartFormData = new FormData();
+        multipartFormData.append("product", new Blob([JSON.stringify(product)], {type: "application/json"}))
+        multipartFormData.append("image", image);
+
+        const response = await axios.post("http://localhost:8080/api/product", multipartFormData)
+        if (response.status == 500) {
+            window.alert("internal server error")
+            return;
+        }
         window.alert("Product added successfully");
         window.location.reload();
     }

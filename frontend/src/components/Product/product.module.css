@@ -5,6 +5,7 @@
     max-width: 250px;
     height: fit-content;
     border-radius:8px;
+    cursor: pointer;
 }
 .productCard > img {
     border-radius: 5px;

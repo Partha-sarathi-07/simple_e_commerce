@@ -1,10 +1,11 @@
 export interface Product {
+    id?: number
     name: string,
     brand: string,
     price: number,
-    stock?: number
+    stockQuantity?: number
     category?: string
     description?: string
     releaseDate?: Date
-    image: File
+    image?: Blob
 }

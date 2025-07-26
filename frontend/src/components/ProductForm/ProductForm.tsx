@@ -8,7 +8,7 @@ type propForm = {
 }
 export default function ProductForm(props: propForm) {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [image, setImage] = useState<File>();;
+    const [image, setImage] = useState<string>(props.productInfo?.imageName!);;
     const [isClicked, setIsClicked] = useState<boolean>(false);
     const categories = ["Laptop", "Headphone", 'Mobile', "Electronics", "Toys", "Fashion"];
     let [selectedCategory, setSelectedCategory] = useState<string>("Select Category");
@@ -19,16 +19,23 @@ export default function ProductForm(props: propForm) {
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         const file = e.target.files?.[0];
         if (file) {
-            setImage(file);
+            setImage(file.name);
         }
     }
 
     function imageUploadElement() {
         return image ?
-            <p>{image.name}</p>
+            <p>{image}</p>
             :
             <p>No file chosen</p>
     }
+    let date;
+    if (props.productInfo) {
+        const [day, month, year] = props.productInfo?.releaseDate?.toString().split('-')!;
+        const dateString: Date = new Date(`${year}-${month}-${day}`)
+        date = dateString.toISOString().split('T')[0];
+    }
+
 
     return (
             <main className={styles.addProduct}>
@@ -99,8 +106,8 @@ export default function ProductForm(props: propForm) {
                         <span>Stock Quantity</span>
                         <input 
                             type="number" 
-                            name="stock" 
-                            defaultValue={props.productInfo?.stock}
+                            name="stockQuantity" 
+                            defaultValue={props.productInfo?.stockQuantity}
                             required
                         />
                         <label>
@@ -113,7 +120,7 @@ export default function ProductForm(props: propForm) {
                         <input 
                         type="date" 
                         name="releaseDate" 
-                        defaultValue={props.productInfo?.releaseDate?.toISOString().split('T')[0]}
+                        defaultValue={date}
                         required
                     />
                     </label>
@@ -136,7 +143,6 @@ export default function ProductForm(props: propForm) {
                             type="file" 
                             className={styles.fileUpload}
                             onChange={handleChange}
-                            defaultValue={props.productInfo?.image.name}
                         />
                     </label>
 

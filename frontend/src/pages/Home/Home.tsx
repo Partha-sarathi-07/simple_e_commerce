@@ -8,14 +8,25 @@ export default function Home() {
     const [products, setProducts] = useState<ProductType[]>([])
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/products")
-            .then(response => setProducts(response.data))
+        async function fetchData() {
+            const response:ProductType[] = (await axios.get("http://localhost:8080/api/products")).data;
 
-        const lastData = products[products.length - 1];
-        axios.get(`http://localhost:8080/api/${lastData.id}/image`)
-            .then(response => lastData.image = response.data)
-        
-        console.log(lastData.image);
+            const productWithImages = await Promise.all(response.map(async (product) => {
+                try {
+                    const imageResponse = await axios.get(`http://localhost:8080/api/product/${product.id}/image`, {
+                        responseType: 'blob',
+                    })
+                    return {...product, image: imageResponse.data}
+                }
+                catch(e) {
+                    console.error(e);
+                    return {...product}
+                }
+            }))
+
+            setProducts(productWithImages);
+        }
+        fetchData();
     }, [])
 
     const productElements = products.map(product => 

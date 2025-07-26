@@ -8,4 +8,5 @@ export interface Product {
     description?: string
     releaseDate?: Date
     image?: Blob
+    imageName?: string
 }

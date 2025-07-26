@@ -7,13 +7,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Date;
 
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,4 +33,24 @@ public class Product {
     private String imageType;
     @Lob
     private byte[] imageData;
+
+    public Product(String name, String brand, String description, BigDecimal price,
+                   String category, Date releaseDate, boolean productAvailable,
+                   int stockQuantity, String imagePath) throws IOException {
+        this.name = name;
+        this.brand = brand;
+        this.description = description;
+        this.price = price;
+        this.category = category;
+        this.releaseDate = releaseDate;
+        this.productAvailable = productAvailable;
+        this.stockQuantity = stockQuantity;
+
+        this.imageData = Files.readAllBytes(Paths.get(imagePath));
+        this.imageName = Paths.get(imagePath).getFileName().toString();
+        this.imageType = detectMimeType(imagePath);
+    }
+    private static String detectMimeType(String imagePath) throws IOException {
+        return Files.probeContentType(Paths.get(imagePath));
+    }
 }

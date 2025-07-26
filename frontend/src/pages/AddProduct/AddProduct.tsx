@@ -4,7 +4,6 @@ import ProductForm from "../../components/ProductForm/ProductForm";
 import axios from "axios";
 
 export default function AddProduct() {
-
     async function handleForm(event:React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -26,10 +25,11 @@ export default function AddProduct() {
         const multipartFormData = new FormData();
         multipartFormData.append("product", new Blob([JSON.stringify(product)], {type: "application/json"}))
         multipartFormData.append("image", image);
-
+        console.log("working")
         const response = await axios.post("http://localhost:8080/api/product", multipartFormData)
         if (response.status == 500) {
             window.alert("internal server error")
+            
             return;
         }
         window.alert("Product added successfully");
